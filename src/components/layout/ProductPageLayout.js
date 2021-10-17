@@ -128,98 +128,17 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const DevPageLayout = () => (
+const ProductPageLayout = () => (
   <ResponsiveContainer>
       <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-                Automated Invoice Generation Process
+                To be Added ...
             </Header>
-            <p style={{ fontSize: '1.21em' }}>
-            <List bulleted>
-                <List.Item>Impact
-                    <List.List>
-                        <List.Item> Automated the Invoice Generation process which reduced the error rate and time to generate invoices for partners </List.Item>
-                        <List.Item> Reduction of time in generation of invoice per partner : From 2 mins to 5 seconds</List.Item>
-                    </List.List>
-                </List.Item>
-                <List.Item>Designed (HLD/LLD) and implemented the automation</List.Item>
-                <List.Item>Tech Stack Used : 
-                    <List.List>
-                        <List.Item> Used Lambda to deploy the code</List.Item>
-                        <List.Item> Back End : Java </List.Item>
-                        <List.Item> Cloud Service : AWS </List.Item>
-                    </List.List>
-                </List.Item>
-            </List>
-            </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image size='large' src={AmazonLogo} />
-            <Header as='h5' style={{ fontSize: '1.8em' }}>
-                Access Point Payments, Amazon
-            </Header>
-          </Grid.Column>
-          <Grid.Column textAlign='center'>
-          </Grid.Column>
-      </Grid>
-    </Segment>
 
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
-          <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-                Sonar Wave Money Transfer and Check Bank Balance in AmazonPay
-            </Header>
-            <p style={{ fontSize: '1.21em' }}>
-            <List bulleted>
-                <List.Item>Impact
-                    <List.List>
-                        <List.Item> DAU(Daily Active Users) increased by 7% approximately </List.Item>
-                        <List.Item> Approx 1.5 mn active users are checking bank balance daily. </List.Item>
-                        <List.Item>Approx 45,000 active users are using Sound Payment </List.Item>
-                    </List.List>
-                </List.Item>
-                <List.Item>Designed (HLD/LLD) and developed mobile payment experience using React JS</List.Item>
-                <List.Item>Tech Stack Used : 
-                    <List.List>
-                        <List.Item> Framework : Spring MVC </List.Item>
-                        <List.Item> Front Ent : React JS Native Mobile Experience </List.Item>
-                        <List.Item> Cloud Service : AWS </List.Item>
-                    </List.List>
-                </List.Item>
-            </List>
-            </p>
-          </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Image size='large' src={AmazonPayLogo} />
-          </Grid.Column>
-          <Grid.Column textAlign='center'>
-          </Grid.Column>
-      </Grid>
-    </Segment>
-
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
-          <Grid.Column width={8}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-                Vaibhav Kumar's Homepage
-            </Header>
-            <p style={{ fontSize: '1.33em' }}>
-            <List bulleted>
-            <List.Item><a href = 'https://github.com/vaibhav0906/personal-react-page'> Github Code</a> </List.Item>
-                <List.Item>Tech Stack Used : 
-                    <List.List>
-                        <List.Item> Front Ent : React JS </List.Item>
-                        <List.Item> Cloud Service : Deployed via Heroku App </List.Item>
-                    </List.List>
-                </List.Item>
-            </List>
-            </p>
-          </Grid.Column>
-          <Grid.Column floated='right' width={6}>
-            <Image rounded size='large' src={PersonalWebpage} />
           </Grid.Column>
           <Grid.Column textAlign='center'>
           </Grid.Column>
@@ -228,4 +147,4 @@ const DevPageLayout = () => (
   </ResponsiveContainer>
 )
 
-export default DevPageLayout
+export default ProductPageLayout
