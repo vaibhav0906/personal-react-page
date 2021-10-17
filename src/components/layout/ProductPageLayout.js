@@ -9,15 +9,11 @@ import LinkedInLogo from '../../resources/linkedinLogo.png';
 import ProductHuntLogo from '../../resources/productHunt.png';
 import MailLogo from '../../resources/mailLogo.png';
 import { Link } from 'react-router-dom';
-import AmazonPayLogo from '../../resources/amazonPay.png';
-import AmazonLogo from '../../resources/amazon.jpeg';
-import PersonalWebpage from '../../resources/personalPage.png';
 import BackArrow from '../../resources/backArrow.png';
 import {
   Container,
   Grid,
   Header,
-  List,
   Image,
   Menu,
   Segment,
