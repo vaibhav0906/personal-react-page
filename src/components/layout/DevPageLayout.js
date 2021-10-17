@@ -4,22 +4,22 @@
 import { createMedia } from '@artsy/fresnel'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import VaibhavSouthGoaImage from '../../resources/vaibhav-bg-goa.jpg';
 import VaibhavProfile from '../../resources/profile-pic.png';
 import LinkedInLogo from '../../resources/linkedinLogo.png';
 import ProductHuntLogo from '../../resources/productHunt.png';
 import MailLogo from '../../resources/mailLogo.png';
 import { Link } from 'react-router-dom';
+import AmazonPayLogo from '../../resources/amazonPay.png';
+import AmazonLogo from '../../resources/amazon.jpeg';
+import PersonalWebpage from '../../resources/personalPage.png';
 import {
-  Button,
   Container,
   Grid,
   Header,
-  Icon,
+  List,
   Image,
   Menu,
   Segment,
-  Sidebar,
   Visibility
 } from 'semantic-ui-react'
 
@@ -29,11 +29,12 @@ const socialMediaLogo = {
     height: '3em'
 }
 
-const homePage = {
-    backgroundImage: 'url(' + VaibhavSouthGoaImage + ')',
-    minHeight: 750,
-    padding: '1em 0em'
+const profileLogo = {
+    width: '5em',
+    height: '5em'
 }
+
+
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -42,36 +43,6 @@ const { MediaContextProvider, Media } = createMedia({
     computer: 1024,
   },
 })
-
-const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Header
-      as='h1'
-      content='Vaibhav Kumar'
-      inverted
-      style={{
-        fontSize: mobile ? '2em' : '4em',
-        fontWeight: 'normal',
-        marginBottom: 0,
-        marginTop: mobile ? '1.5em' : '3em',
-      }}
-    />
-    <Header
-      as='h2'
-      content='Software Developer at Hevo Data, Amazon'
-      inverted
-      style={{
-        fontSize: mobile ? '1.5em' : '1.7em',
-        fontWeight: 'normal',
-        marginTop: mobile ? '0.5em' : '1.5em',
-      }}
-    />
-  </Container>
-)
-
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool,
-}
 
 /* Heads up!
  * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
@@ -94,12 +65,6 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Segment
-            inverted
-            textAlign='center'
-            style={homePage}
-            vertical
-          >
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -108,6 +73,12 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
+                <Menu.Item position='left'>
+                    <a href = "https://www.linkedin.com/in/vaibhav-kumar-31k/">
+                        <Image circular src={VaibhavProfile} style= {profileLogo} />
+                    </a>
+                </Menu.Item>
+            
                 <Menu.Item position='right'>
                     <a href = "https://www.linkedin.com/in/vaibhav-kumar-31k/">
                         <Image src= {LinkedInLogo} style= {socialMediaLogo} avatar />
@@ -125,8 +96,6 @@ class DesktopContainer extends Component {
                 </Menu.Item>
               </Container>
             </Menu>
-            <HomepageHeading />
-          </Segment>
         </Visibility>
 
         {children}
@@ -139,71 +108,6 @@ DesktopContainer.propTypes = {
   children: PropTypes.node,
 }
 
-class MobileContainer extends Component {
-  state = {}
-
-  handleSidebarHide = () => this.setState({ sidebarOpened: false })
-
-  handleToggle = () => this.setState({ sidebarOpened: true })
-
-  render() {
-    const { children } = this.props
-    const { sidebarOpened } = this.state
-
-    return (
-      <Media as={Sidebar.Pushable} at='mobile'>
-        <Sidebar.Pushable>
-          <Sidebar
-            as={Menu}
-            animation='overlay'
-            inverted
-            onHide={this.handleSidebarHide}
-            vertical
-            visible={sidebarOpened}
-          >
-            <Menu.Item as='a' active>
-              Home
-            </Menu.Item>
-            
-          </Sidebar>
-
-          <Sidebar.Pusher dimmed={sidebarOpened}>
-            <Segment
-              inverted
-              textAlign='center'
-              style={{ minHeight: 350, padding: '1em 0em' }}
-              vertical
-            >
-              <Container>
-                <Menu inverted pointing secondary size='large'>
-                  <Menu.Item onClick={this.handleToggle}>
-                    <Icon name='sidebar' />
-                  </Menu.Item>
-                  <Menu.Item position='right'>
-                    <Button as='a' inverted>
-                      Log in
-                    </Button>
-                    <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                      Sign Up
-                    </Button>
-                  </Menu.Item>
-                </Menu>
-              </Container>
-              <HomepageHeading mobile />
-            </Segment>
-
-            {children}
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </Media>
-    )
-  }
-}
-
-MobileContainer.propTypes = {
-  children: PropTypes.node,
-}
-
 const ResponsiveContainer = ({ children }) => (
   /* Heads up!
    * For large applications it may not be best option to put all page into these containers at
@@ -211,7 +115,6 @@ const ResponsiveContainer = ({ children }) => (
    */
   <MediaContextProvider>
     <DesktopContainer>{children}</DesktopContainer>
-    <MobileContainer>{children}</MobileContainer>
   </MediaContextProvider>
 )
 
@@ -221,18 +124,36 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: '8em 0em' }} vertical>
+      <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
           <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-                About me
+                Automated Invoice Generation Process
             </Header>
-            <p style={{ fontSize: '1.33em' }}>
-            Vaibhav Kumar loves programming, knowing about new product, reading blogs, traveling, boxing, and lifting heavy things. He does not love talking about himself in the 3rd person. He is software developer at Hevo Data, a startup that is innovating in ETL/ Reverse-ETL space. Previously, he has worked in Amazon (Amazon Pay) to build a complete payment experience to user.
+            <p style={{ fontSize: '1.21em' }}>
+            <List bulleted>
+                <List.Item>Impact
+                    <List.List>
+                        <List.Item> Automated the Invoice Generation process which reduced the error rate and time to generate invoices for partners </List.Item>
+                        <List.Item> Reduction of time in generation of invoice per partner : From 2 mins to 5 seconds</List.Item>
+                    </List.List>
+                </List.Item>
+                <List.Item>Designed (HLD/LLD) and implemented the automation</List.Item>
+                <List.Item>Tech Stack Used : 
+                    <List.List>
+                        <List.Item> Used Lambda to deploy the code</List.Item>
+                        <List.Item> Back End : Java </List.Item>
+                        <List.Item> Cloud Service : AWS </List.Item>
+                    </List.List>
+                </List.Item>
+            </List>
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
-            <Image rounded size='large' src={VaibhavProfile} />
+            <Image size='large' src={AmazonLogo} />
+            <Header as='h5' style={{ fontSize: '1.8em' }}>
+                Access Point Payments, Amazon
+            </Header>
           </Grid.Column>
           <Grid.Column textAlign='center'>
           </Grid.Column>
@@ -241,17 +162,58 @@ const HomepageLayout = () => (
 
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
-          <Grid.Column width={7}>
+          <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-                As Software Developer
+                Sonar Wave Money Transfer and Check Bank Balance in AmazonPay
             </Header>
-            <Link to="/dev-projects"> Tap to view Projects </Link>
+            <p style={{ fontSize: '1.21em' }}>
+            <List bulleted>
+                <List.Item>Impact
+                    <List.List>
+                        <List.Item> DAU(Daily Active Users) increased by 7% approximately </List.Item>
+                        <List.Item> Approx 1.5 mn active users are checking bank balance daily. </List.Item>
+                        <List.Item>Approx 45,000 active users are using Sound Payment </List.Item>
+                    </List.List>
+                </List.Item>
+                <List.Item>Designed (HLD/LLD) and developed mobile payment experience using React JS</List.Item>
+                <List.Item>Tech Stack Used : 
+                    <List.List>
+                        <List.Item> Framework : Spring MVC </List.Item>
+                        <List.Item> Front Ent : React JS Native Mobile Experience </List.Item>
+                        <List.Item> Cloud Service : AWS </List.Item>
+                    </List.List>
+                </List.Item>
+            </List>
+            </p>
           </Grid.Column>
-          <Grid.Column floated='right' width={7}>
+          <Grid.Column floated='right' width={6}>
+            <Image size='large' src={AmazonPayLogo} />
+          </Grid.Column>
+          <Grid.Column textAlign='center'>
+          </Grid.Column>
+      </Grid>
+    </Segment>
+
+    <Segment style={{ padding: '8em 0em' }} vertical>
+      <Grid container stackable verticalAlign='middle'>
+          <Grid.Column width={8}>
             <Header as='h3' style={{ fontSize: '2em' }}>
-                As Product Enthusiast
+                Vaibhav Kumar's Homepage
             </Header>
-            <Link to="/product-projects"> Tap to view Projects </Link>
+            <p style={{ fontSize: '1.33em' }}>
+            <List bulleted>
+            <List.Item><a href = 'https://github.com/vaibhav0906/personal-react-page'> Github Code</a> </List.Item>
+                <List.Item>Tech Stack Used : 
+                    <List.List>
+                        <List.Item> Front Ent : React JS </List.Item>
+                        <List.Item> Cloud Service : Deployed via Heroku App </List.Item>
+                    </List.List>
+                </List.Item>
+            </List>
+            </p>
+          </Grid.Column>
+          <Grid.Column floated='right' width={6}>
+            <Image rounded size='large' src={PersonalWebpage} />
           </Grid.Column>
           <Grid.Column textAlign='center'>
           </Grid.Column>
