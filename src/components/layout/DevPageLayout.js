@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import AmazonPayLogo from '../../resources/amazonPay.png';
 import AmazonLogo from '../../resources/amazon.jpeg';
 import PersonalWebpage from '../../resources/personalPage.png';
+import BackArrow from '../../resources/backArrow.png';
 import {
   Container,
   Grid,
@@ -73,7 +74,12 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                <Menu.Item position='left'>
+              <Menu.Item position='left'>
+                    <Link to = "/">
+                        <Image circular src={BackArrow} style= {profileLogo} />
+                    </Link>
+                </Menu.Item>
+                <Menu.Item>
                     <a href = "https://www.linkedin.com/in/vaibhav-kumar-31k/">
                         <Image circular src={VaibhavProfile} style= {profileLogo} />
                     </a>
