@@ -11,6 +11,7 @@ import MailLogo from '../../resources/mailLogo.png';
 import { Link } from 'react-router-dom';
 import AmazonPayLogo from '../../resources/amazonPay.png';
 import AmazonLogo from '../../resources/amazon.jpeg';
+import DripCapitalLogo from '../../resources/dripCapitalLogo.png';
 import PersonalWebpage from '../../resources/personalPage.png';
 import BackArrow from '../../resources/backArrow.png';
 import {
@@ -130,6 +131,41 @@ ResponsiveContainer.propTypes = {
 
 const DevPageLayout = () => (
   <ResponsiveContainer>
+        <Segment style={{ padding: '8em 0em' }} vertical>
+        <Grid container stackable verticalAlign='middle'>
+            <Grid.Column width={8}>
+              <Header as='h3' style={{ fontSize: '2em' }}>
+                Bizportal
+              </Header>
+              <p style={{ fontSize: '1.21em' }}>
+              <List bulleted>
+                  <List.Item> Designed (HLD/LLD) and Engineered Bizportal from Backend which is Exporter-Importer Trade Discovery Platform. </List.Item>
+                  <List.Item>Worked on end to end design and implementation of Microservices
+                    <List.List>
+                      <List.Item> Notification Service : To Deliver Outbound Emails, SMS and Whatsapp messages, App Notification. </List.Item>
+                      <List.Item> User Management Service : Manages User, Company and User-Company Relation. </List.Item>
+                      <List.Item> Bizportal Backend : Front Facing Service Interacting with different MicroServices to 
+                        facilitate discovery usecases. </List.Item>
+                      <List.Item> Container Tracking Service : Tracks Shipment Container periodically using Cron Job</List.Item>
+                    </List.List> 
+                  </List.Item>
+                  <List.Item>Tech Stack Used : 
+                      <List.List>
+                          <List.Item> Back End : Go </List.Item>
+                          <List.Item> Database : MySQL, MongoDB </List.Item>
+                          <List.Item> Cloud Service : AWS </List.Item>
+                      </List.List>
+                  </List.Item>
+              </List>
+              </p>
+            </Grid.Column>
+            <Grid.Column floated='right' width={6}>
+              <Image size='large' src={DripCapitalLogo} />
+            </Grid.Column>
+            <Grid.Column textAlign='center'>
+            </Grid.Column>
+        </Grid>
+      </Segment>
       <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
           <Grid.Column width={8}>

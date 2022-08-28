@@ -31,7 +31,7 @@ const socialMediaLogo = {
 
 const homePage = {
     backgroundImage: 'url(' + VaibhavSouthGoaImage + ')',
-    minHeight: 750,
+    minHeight: 700,
     padding: '1em 0em'
 }
 
@@ -58,7 +58,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content='Software Developer at Hevo Data, Amazon'
+      content='Software Developer at Drip Capital, Amazon'
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '1.7em',
@@ -66,6 +66,15 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.5em',
       }}
     />
+
+    <br/> <br/> <br/>
+
+      <Header as='h5' style={{ fontSize: '1.5em' }}>
+          <Link to="/dev-projects"> As Software Developer </Link>
+      </Header>
+      <Header as='h5' style={{ fontSize: '1.5em' }}>
+      <Link to="/product-projects"> As Product Enthusiast </Link>
+      </Header>
   </Container>
 )
 
@@ -94,13 +103,7 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-          <Segment
-            inverted
-            textAlign='center'
-            style={homePage}
-            vertical
-          >
-            <Menu
+          <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
               pointing={!fixed}
@@ -125,6 +128,11 @@ class DesktopContainer extends Component {
                 </Menu.Item>
               </Container>
             </Menu>
+          <Segment
+            inverted
+            textAlign='center'
+            style={homePage}
+          >
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -228,7 +236,9 @@ const HomepageLayout = () => (
                 About me
             </Header>
             <p style={{ fontSize: '1.33em' }}>
-            Vaibhav Kumar loves programming, knowing about new product, reading blogs, traveling, boxing, and lifting heavy things. He does not love talking about himself in the 3rd person. He is software developer at Hevo Data, a startup that is innovating in ETL/ Reverse-ETL space. Previously, he has worked in Amazon (Amazon Pay) to build a complete payment experience to user.
+            Vaibhav Kumar loves programming, knowing about new product, reading blogs, traveling, boxing, and lifting heavy things. He does not love talking about himself in the 3rd person. 
+            He is software developer at Drip Captital, a Fintech Startup that solves problem of Export and Import Financing. Previously, he has worked in Amazon (Amazon Pay) to build a complete
+            payment experience to user and startups like Hevo Data, a company that is innovating in ETL/ Reverse-ETL space. 
             </p>
           </Grid.Column>
           <Grid.Column floated='right' width={6}>
@@ -238,26 +248,6 @@ const HomepageLayout = () => (
           </Grid.Column>
       </Grid>
     </Segment>
-
-    <Segment style={{ padding: '8em 0em' }} vertical>
-      <Grid container stackable verticalAlign='middle'>
-          <Grid.Column width={7}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-                As Software Developer
-            </Header>
-            <Link to="/dev-projects"> Tap to view Projects </Link>
-          </Grid.Column>
-          <Grid.Column floated='right' width={7}>
-            <Header as='h3' style={{ fontSize: '2em' }}>
-                As Product Enthusiast
-            </Header>
-            <Link to="/product-projects"> Tap to view Projects </Link>
-          </Grid.Column>
-          <Grid.Column textAlign='center'>
-          </Grid.Column>
-      </Grid>
-    </Segment>
-
   </ResponsiveContainer>
 )
 
